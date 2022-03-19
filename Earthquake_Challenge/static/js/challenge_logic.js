@@ -137,6 +137,7 @@ legend.onAdd = function() {
     "#ea2c2c"
   ];
 
+
 // Looping through our intervals to generate a label with a colored square for each interval.
   for (var i = 0; i < magnitudes.length; i++) {
     console.log(colors[i]);
@@ -146,10 +147,10 @@ legend.onAdd = function() {
     }
     return div;
   };
-
+ 
   // Finally, we our legend to the map.
   legend.addTo(map);
-
+ 
 
   // 3. Use d3.json to make a call to get our Tectonic Plate geoJSON data.
   d3.json("https://raw.githubusercontent.com/fraxen/tectonicplates/master/GeoJSON/PB2002_boundaries.json").then(function(data) {
@@ -159,7 +160,7 @@ legend.onAdd = function() {
       //opacity: 1,
       //fillOpacity: 1,
       //fillColor: getColor(feature.properties.mag),
-      color: "#000000",
+      color: "#d10000",
       //radius: getRadius(feature.properties.mag),
       stroke: true,
       weight: 0.5
@@ -206,10 +207,10 @@ d3.json("https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_week.geoj
   // This function determines the color of the marker based on the magnitude of the earthquake.
   function getColor(magnitude) {
     if (magnitude > 6) {
-      return "#2424ff";
+      return "#d60000";
     }
     if (magnitude > 5 ) {
-      return "#d60000";
+      return "#b38d2a";
     }
     
     return "#24ffff";
